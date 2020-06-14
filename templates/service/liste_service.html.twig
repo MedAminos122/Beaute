@@ -1,0 +1,31 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+{% if services != null %}
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">libellet</th>
+      <th scope="col">description</th>
+      <th scope="col" colspan="2">Opreation</th>
+      </tr>
+    {% for service in services %}
+    <tr>
+      <td>{{service.libellet}} 
+      </td> 
+      <td>{{service.description}} 
+      </td> 
+<td>
+    <a href="{{path('updateService',{'id':service})}}" class="btn btn-primary">mettre à jour</a>
+    </td>
+    <td>
+     <a href="{{path('deleteService',{'id':service})}}" class="btn btn-primary">supprimer</a>
+    </td>
+    </tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <p>la liste des services est vide</p>
+{% endif %}
+    
+{% endblock %}

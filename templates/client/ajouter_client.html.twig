@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+<div class="form-group" >
+    {{ form_start(form) }}
+    {{ form_row(form.nomcli, {'attr':{'placeholder':'Taper un nom'}}) }}
+    {{ form_row(form.prenomcli, {'attr':{'placeholder':'Taper un prenom'}}) }}
+    {{ form_row(form.adresse, {'attr':{'placeholder':'Taper un adresse postale'}}) }}
+    {{ form_row(form.email, {'attr':{'placeholder':'Taper une adresse email'}}) }}
+    <button type="submit">ajouter</button>
+    {{ form_end(form) }}
+    </div>
+{% endblock %}

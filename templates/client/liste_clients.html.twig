@@ -1,0 +1,42 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+{% if clients != null %}
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">nom</th>
+      <th scope="col">prenom</th>
+      <th scope="col" colspan="5">Opreation</th>
+      </tr>
+    {% for client in clients %}
+    <tr>
+    <td>{{client.nomcli}} 
+      </td>
+      <td>{{client.prenomcli}} 
+      </td> 
+      <td>
+    <a href="{{path('updateClient',{'id':client})}}" class="btn btn-primary">mettre à jour</a>
+    </td>
+    <td>
+    <a href="{{path('deleteClient',{'id':client})}}" class="btn btn-primary">supprimer</a>
+    </td>
+    <td> 
+    <a href="{{path('addReservationpar',{'id':client})}}" class="btn btn-primary">reserver</a>
+    </td>
+    <td>
+     <a href="{{path('ClientReservations',{'id':client})}}" class="btn btn-primary">voir reservation</a>
+    </td>
+
+    <td>
+     <a href="{{path('clientDetails',{'id':client})}}" class="btn btn-primary">voir detail</a>
+    </td>
+
+    </tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <p>la liste des client est vide</p>
+{% endif %}
+    
+{% endblock %}

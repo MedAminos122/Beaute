@@ -1,0 +1,9 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <h1>Detail client:</h1>
+    <lable>nom : {{client.nomcli}}</label><br/>
+    <lable>prenom : {{client.prenomcli}}</label><br/>
+    <lable>adresse : {{client.adresse}}</label><br/>
+    <lable>email : {{client.email}}</label><br/><br/>
+    <a href="{{path('listClient')}}" class="btn btn-info">retourner vers la liste</a>
+{% endblock %}

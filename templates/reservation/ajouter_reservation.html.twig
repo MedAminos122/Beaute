@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+<div class="form-group">
+    {{ form_start(form) }}
+    {{ form_row(form.dater) }}
+    {{ form_row(form.etat, {'attr':{'placeholder':'Taper un etat'}}) }}
+    {{ form_row(form.cli) }}
+    {{ form_row(form.service) }}
+    <button type="submit">ajouter</button>
+    {{ form_end(form) }}
+    </div>
+{% endblock %}
